@@ -1,0 +1,16 @@
+# Python dependencies for SirenFuzz scripts
+#
+# Installation:
+#   pip install -r requirements.txt
+#
+# Or with virtual environment:
+#   python3 -m venv venv
+#   source venv/bin/activate  # On Windows: venv\Scripts\activate
+#   pip install -r requirements.txt
+
+# Angr - Symbolic execution framework for validator_angr.py
+angr>=9.2.0
+
+# PyElfTools - ELF file parsing for isr_read.py
+pyelftools>=0.29
+
