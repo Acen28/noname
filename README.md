@@ -2,19 +2,15 @@
 
 ## Installation
 
-### 1. Clone and submodules
+### 1. Clone
 
 After cloning the repository, initialize the **Ghidra specs submodule** used by the icicle emulator (environment variable `GHIDRA_SRC`, default `./ghidra`):
 
 ```bash
-git clone <your-repo-url> SirenFuzz
-cd SirenFuzz
 git submodule update --init ghidra
 ```
 
-Or clone with submodules in one step: `git clone --recursive <your-repo-url> SirenFuzz`
-
-### 2. Full Ghidra install (headless; for CFG extraction)
+### 2. Full Ghidra install (headless; for Static CFG extraction)
 
 The first time you fuzz a firmware, if `cfg.json` is not present yet, static CFG is extracted from the ELF via **Ghidra Headless** (`support/analyzeHeadless`). This requires a **full Ghidra release** (not the `ghidra` submodule source tree above).
 
@@ -25,7 +21,7 @@ The first time you fuzz a firmware, if `cfg.json` is not present yet, static CFG
   export GHIDRA_INSTALL_DIR=/path/to/ghidra_11.x_PUBLIC
   ```
 
-The tool searches in order: `GHIDRA_INSTALL_DIR` → `$HOME/ghidra` → `/opt/ghidra` → `/usr/local/ghidra`. Point to the **installed** distribution, not the repo’s `ghidra` submodule.
+Point to the **installed** distribution, not the repo’s `ghidra` submodule.
 
 ### 3. Rust
 
