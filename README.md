@@ -1,4 +1,4 @@
-# SirenFuzz
+# README
 
 ## Installation
 
