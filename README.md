@@ -57,6 +57,7 @@ WORKDIR=./test RUN_FOR=24h cargo run --release -- ./firmwares/3Dprinter
 
 On first run, `config.yml` is generated automatically for ELF targets. Non-ELF targets or missing MCU memory regions may need manual edits. 
 
+> **Note:** We have included all our test firmware samples in the `firmwares/` directory for your convenience. You can directly run them using the command above.
 ---
 
 ## Common environment variables
