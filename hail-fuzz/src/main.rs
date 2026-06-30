@@ -1267,6 +1267,16 @@ impl Fuzzer {
                             task.last_addr,
                             task.current_addr,
                         );
+                    }else {
+                        if let Some(ref cfi_hook) = self.cfi_hook {
+                            if let Some(cfi) = cfi_hook.get_mut(&mut self.vm) {
+                                cfi.remove_learned_edge(task.last_addr, task.current_addr);
+                                eprintln!(
+                                    "[Fuzzer] 🧹 Revoked edge 0x{:x} -> 0x{:x} (seed not in corpus)",
+                                    task.last_addr, task.current_addr
+                                );
+                            }
+                        }
                     }
                 }
                 crate::validator::ValidationResult::ValidJump(targets) => {
